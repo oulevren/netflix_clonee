@@ -10,7 +10,7 @@ def register_page(request):
     if request.method == 'POST':
         form = UserForm(request.POST)
 
-        #FORM GEÇERLİ Mİ
+        #form geçerli mi değil mi
         if form.is_valid():
             #veritabanına kaydet
             form.save()
@@ -18,12 +18,16 @@ def register_page(request):
             return redirect('page-index')
         else:
             #hata ver
-            print("FORM HATASI",form.errors)
-            context['errorForm'] = form.errors
+            print("FORM HATAASI",form.errors)
+            # return redirect('page-register')
+            context["errorForm"] = form.errors
             return render(request,"register.html",context)
+
     else:
         #get ise sayfayı hazırla
+        # context["registerForm"] = UserForm
         return render(request,"register.html",context)
     
+
 def login_page(request):
     return render(request,"login.html")
