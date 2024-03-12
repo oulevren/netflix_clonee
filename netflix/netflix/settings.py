@@ -9,10 +9,8 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-
 import os
 from pathlib import Path
-
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-um=bk)f7)fg)y%vdp8o&p7=x53^g*(bwp11^w2by1iio^r)y#j'
+SECRET_KEY = 'django-insecure-#+cm!9i$^5x18b4f=%!h%1vm0580-og)5%m843ot$_2^43cn=q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -115,13 +113,15 @@ USE_I18N = True
 
 USE_TZ = True
 
+AUTH_USER_MODEL = "netflix_app.NetflixUser"
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
 
-#RESIMLER VE VIDEOLAR BURADA DEPOALANACAK
+#RESIMLER VIDEOLAR
 MEDIA_URL = os.path.join(BASE_DIR,"Media/")
 MEDIA_ROOT = ""
 

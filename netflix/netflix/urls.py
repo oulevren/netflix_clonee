@@ -15,24 +15,19 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 
 #config
 from django.conf import settings
 from django.conf.urls.static import static
 
-#netflix_app için view
 from netflix_app.views import *
-
-#user_app için view
-from user_app.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',index,name="page-index"),
 
-    #user_app viewleri başlar
-    path('register',register_page,name="page-register"),
-    path('login',login_page,name="page-login"),
-    #user_app viewleri biter
+    #user işlemleri başlar
+    path('user_app/', include('user_app.urls'))
+    #user işlemleri biter
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

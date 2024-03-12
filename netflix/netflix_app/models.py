@@ -1,11 +1,7 @@
 from django.db import models
-from django.contrib.auth.models import User,AbstractUser,AbstractBaseUser,Group,Permission
-
+from django.contrib.auth.models import AbstractUser
 # Create your models here.
 
-
 class NetflixUser(AbstractUser):
-    groups = models.ManyToManyField(Group, related_name='netflix_users')
-    user_permissions = models.ManyToManyField(Permission, related_name='netflix_users_permissions')
-    email = models.EmailField(("E-mail adresi"), max_length=254,unique=True)
-    avatar = models.ImageField(("Profil Fotoğrafı"), upload_to="User/Avatars/")
+    email = models.EmailField(("E-mail Adresi"), max_length=254,unique=True)
+    avatar = models.ImageField(("Profil Fotoğrafı"), upload_to="Users/Avatars/")
