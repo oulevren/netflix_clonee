@@ -21,13 +21,14 @@ from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
 
+#netflix_app
 from netflix_app.views import *
+
+#user_app
+from user_app.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',index,name="page-index"),
-
-    #user işlemleri başlar
-    path('user_app/', include('user_app.urls'))
-    #user işlemleri biter
+    path('', include('user_app.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

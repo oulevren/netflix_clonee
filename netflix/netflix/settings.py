@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-#+cm!9i$^5x18b4f=%!h%1vm0580-og)5%m843ot$_2^43cn=q'
+SECRET_KEY = 'django-insecure-x(6!9dtl%q-=kfa%y-pi$cte_7u*q(xwbdtm8v76p+i95)njed'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -113,6 +113,8 @@ USE_I18N = True
 
 USE_TZ = True
 
+
+#Abstractuser modeli için
 AUTH_USER_MODEL = "netflix_app.NetflixUser"
 
 
@@ -121,9 +123,12 @@ AUTH_USER_MODEL = "netflix_app.NetflixUser"
 
 STATIC_URL = 'static/'
 
-#RESIMLER VIDEOLAR
-MEDIA_URL = os.path.join(BASE_DIR,"Media/")
-MEDIA_ROOT = ""
+#RESIM VE VIDEOLAR BURAYA DEPOLANACAK
+
+MEDIA_URL = ""
+MEDIA_ROOT = os.path.join(BASE_DIR, "Media/")
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
